@@ -1,3 +1,29 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-3">{{ title }}</h1>
+    <p class="lead">Testing of Google Maps API with Angular 4 project by Brandon Williams.</p>
+
+  </div>
+
+      <div class="form-group">
+        <label class="control-label" for="focusedInput">Latitude</label>
+        <input disabled class="form-control" id="focusedInput" [(ngModel)]="latInput" name="latInput" type="text" value="Enter a latitude...">
+        <label class="control-label" for="focusedInput">Longitude</label>
+        <input disabled class="form-control" id="focusedInput" [(ngModel)]="lngInput" name="lngInput" type="text" value="Enter a longitude...">
+      </div>
+
+  <!-- this creates a google map on the page with the given lat/lng from -->
+  <!-- the component as the initial center of the map: -->
+  <div class="map-container">
+
+
+  <h4>Click the map or drag the marker to change coordinates!</h4>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="12" (mapClick)="mapClicked($event)">
+    <agm-marker
+      [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"
+      [latitude]="lat"
+      [longitude]="lng"></agm-marker>
+  </agm-map>
+  </div>
+</div>
