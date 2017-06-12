@@ -1,5 +1,9 @@
 # AngularGoogleMaps
 
+Make sure to go into src/app/app.module.ts and add your own [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key). If you don't, the map won't work.
+
+-Brandon
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
 
 ## Development server
